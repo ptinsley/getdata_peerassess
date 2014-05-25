@@ -66,13 +66,12 @@ mergedData[mergedData$activity == 3, 'activity'] <- 'Walking Downstairs'
 mergedData[mergedData$activity == 4, 'activity'] <- 'Sitting'
 mergedData[mergedData$activity == 5, 'activity'] <- 'Standing'
 mergedData[mergedData$activity == 6, 'activity'] <- 'Laying'
+mergedData$activity <- as.factor(mergedData$activity)
+
 
 #2. - Extracts only the measurements on the mean and standard deviation for each measurement.
 #use original featureNames so we can easily key off of mean() std()
 mergedData <- subset(mergedData, select = grep("mean\\(\\)|std\\(\\)|activity|subject", featureNames$V2))
 
 #5. - Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-for(subject in unique(mergedData$subject)) {
-  print(subject)
-  print(ave(mergedData[mergedData$subject == subject,1:(ncol(mergedData)-2)]))
-}
+mergedDataAverage <- aggregate(. ~ subject + activity, data=mergedData, mean)
