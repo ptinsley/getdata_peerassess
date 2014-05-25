@@ -6,3 +6,9 @@
 
 # R data files from past sessions
 .Rdata
+
+#ignore any downloaded zip files
+*.zip
+
+#ignore the dataset that is unzipped as part of this exercise
+UCI\ HAR\ Dataset
