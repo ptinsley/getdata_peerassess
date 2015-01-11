@@ -1,5 +1,5 @@
 # CodeBook
-## Summaryization Choices
+## Summarization Choices
 All columns not representing mean and sum values have been stripped from the datasets created in the script.
 
 The final output (average_data.txt) contains averages of all std and mean samples for the touple of subject and activity.
