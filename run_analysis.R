@@ -75,3 +75,6 @@ mergedData <- subset(mergedData, select = grep("mean\\(\\)|std\\(\\)|activity|su
 
 #5. - Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 mergedDataAverage <- aggregate(. ~ subject + activity, data=mergedData, mean)
+
+#save the results of averaging
+write.table(mergedDataAverage, row.names = FALSE, file='mergedDataAverage.txt')
