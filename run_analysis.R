@@ -77,4 +77,4 @@ mergedData <- subset(mergedData, select = grep("mean\\(\\)|std\\(\\)|activity|su
 mergedDataAverage <- aggregate(. ~ subject + activity, data=mergedData, mean)
 
 #save the results of averaging
-write.table(mergedDataAverage, row.names = FALSE, file='mergedDataAverage.txt')
+write.table(mergedDataAverage, row.names = FALSE, file='average_data.txt')
